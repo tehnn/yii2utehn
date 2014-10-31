@@ -1,0 +1,32 @@
+{
+    "name": "prawee/yii2-grid",
+    "description": "Management Yii2 Gridview",
+    "keywords": ["yii2","gridview","actioncolumn","imagecolumn","childcolumn","extension"],
+    "homepage": "http://www.prawee.com",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "prawee wongsa",
+            "email": "konkeanweb@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "kartik-v/yii2-icons": "*",
+        "prawee/yii2-fancytree-widget": "*"
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "prawee\\": ""
+        }
+    }
+}
+
+
+
+
