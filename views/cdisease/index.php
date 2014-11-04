@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+
 //use yii\grid\GridView;
 
 
@@ -14,7 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php
 
-// modal update
 use yii\bootstrap\Modal;
 
 Modal::begin([
@@ -26,10 +26,7 @@ Modal::begin([
 <?php
 Modal::end();
 ?>
-
 <?php
-// modal update
-//use yii\bootstrap\Modal;
 Modal::begin([
     'id' => 'modal',
     'header' => 'Create ข้อมูล'
@@ -45,17 +42,25 @@ Modal::end();
 <div class="cdisease-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]);    ?>
+        <?php // echo $this->render('_search', ['model' => $searchModel]);      ?>
 
     <p>
-        <?= Html::a('Create Cdisease', ['create'], ['class' => 'btn btn-success', 'id' => 'btn_add']) ?>
+    <?= Html::a('Create Cdisease', ['create'], ['class' => 'btn btn-success', 'id' => 'btn_add']) ?>
     </p>
 
     <?php
-    use kartik\grid\GridView;   
-    echo GridView::widget([
+
+    use kartik\grid\GridView;
+
+echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'pjax' => true,
+        'pjaxSettings' => [
+            'neverTimeout' => true,
+            'beforeGrid' => 'My fancy content before.',
+            'afterGrid' => 'My fancy content after.',
+        ],
         'columns' => [
             [
                 'class' => '\kartik\grid\CheckboxColumn'
