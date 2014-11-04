@@ -4,6 +4,7 @@ Yii Framework 2 Change Log
 2.0.1 under development
 -----------------------
 
+- Bug #5893: `yii\helpers\ArrayHelper::toArray()` now applies `$properties` parameter for converting descending objects in recursive calls (otsec)
 - Bug #4471: `yii\caching\ApcCache::getValues()` now returns array in case of APC is installed but not enabled in CLI mode (samdark, cebe)
 - Bug #5402: Debugger was not loading when there were closures in asset classes (samdark)
 - Bug #5570: `yii\bootstrap\Tabs` would throw an exception if `content` is not set for one of its `items` (RomeroMsk)
@@ -15,6 +16,7 @@ Yii Framework 2 Change Log
 - Bug #5702: Parenthesis should be automatically added to `Validator::whenClient` to avoid js error (mdmunir, qiangxue)
 - Bug #5745: Gii and debug modules may cause 404 exception when the route contains dashes (qiangxue)
 - Bug #5780: `QueryBuilder::batchInsert()` may cause "undefined index" error (qiangxue)
+- Bug #5833: The `message` command fails with a FK constraint error when trying to update messages (qiangxue)
 - Bug: Gii console command help information does not contain global options (qiangxue)
 - Bug: `yii\web\UrlRule` was unable to create URLs for rules containing unicode characters (samdark)
 - Enh #5223: Query builder now supports selecting sub-queries as columns (qiangxue)
@@ -25,10 +27,12 @@ Yii Framework 2 Change Log
 - Enh #5613: Added `--overwrite` option to Gii console command to support overwriting all files (motin, qiangxue)
 - Enh #5646: Call `yii\base\ErrorHandler::unregister()` instead of `restore_*_handlers` directly (aivus)
 - Enh #5735: Added `yii\bootstrap\Tabs::renderTabContent` to support manually rendering tab contents (RomeroMsk)
+- Enh #5770: Added more PHP error names for `ErrorException` (mongosoft)
 - Enh #5806: Allow `Html::encode()` to be used when the application is not started (qiangxue)
 - Enh: `Console::confirm()` now uses `Console::stdout()` instead of `echo` to be consistent with all other functions (cebe)
 - Chg #3630: `yii\db\Command::queryInternal()` is now protected (samdark) 
-- Chg #5508: Dropped the support for the `--append` option for the `fixture` command (qiangxue) 
+- Chg #5508: Dropped the support for the `--append` option for the `fixture` command (qiangxue)
+- Chg #5874: Upgraded Twitter Bootstrap to 3.3.x (samdark)
 
 2.0.0 October 12, 2014
 ----------------------

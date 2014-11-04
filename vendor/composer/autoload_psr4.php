@@ -17,6 +17,8 @@ return array(
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'wbraganca\\' => array($vendorDir . '/prawee/yii2-fancytree-widget'),
     'prawee\\' => array($vendorDir . '/prawee/yii2-grid'),
+    'miloschuman\\highcharts\\' => array($vendorDir . '/miloschuman/yii2-highcharts-widget/src'),
+    'mdm\\captcha\\' => array($vendorDir . '/mdmsoft/yii2-captcha'),
     'kartik\\widgets\\' => array($vendorDir . '/kartik-v/yii2-widgets'),
     'kartik\\slider\\' => array($vendorDir . '/kartik-v/yii2-slider'),
     'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x'),

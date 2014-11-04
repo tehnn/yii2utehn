@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CDiseaseSearch */
@@ -44,18 +45,22 @@ Modal::end();
 <div class="cdisease-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-        <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);    ?>
 
     <p>
-    <?= Html::a('Create Cdisease', ['create'], ['class' => 'btn btn-success','id'=>'btn_add']) ?>
+        <?= Html::a('Create Cdisease', ['create'], ['class' => 'btn btn-success', 'id' => 'btn_add']) ?>
     </p>
 
-    <?=
-    GridView::widget([
+    <?php
+    use kartik\grid\GridView;   
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => '\kartik\grid\CheckboxColumn'
+            ],
+            ['class' => '\kartik\grid\SerialColumn'],
             'code',
             'disease',
             'icd10',
@@ -71,9 +76,9 @@ Modal::end();
                     }
                         ]
                     ],
-                //['class' => 'yii\grid\ActionColumn'],
                 ],
             ]);
             ?>
+
 
 </div>
